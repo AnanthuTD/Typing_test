@@ -20,10 +20,3 @@
     height: 30%;
     background-color: #040404e3;
 }
-.body_bg{
-    height: 100vh;
-    background-image: url('../public/Meteor.svg');
-    background-size: cover;
-    display: flex;
-    flex-direction: column;
-}

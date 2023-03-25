@@ -1,13 +1,7 @@
-.navbar_light .navbar_brand {
-    color: #2b9f45;
-}
-.navbar_opt > *{
-    margin-right: 1rem;
-}
-.navbar_opt > a{
-    text-decoration: none !important;
-    /* color: aliceblue; */
-}
-.navbar_opt > a:active{
-    color: aquamarine;
+.body_bg{
+    height: 100vh;
+    background-image: url('../public/Meteor.svg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
 }
