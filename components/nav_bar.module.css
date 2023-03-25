@@ -1,5 +1,7 @@
 .navbar_light .navbar_brand {
     color: #2b9f45;
+    font-size: xx-large;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }
 .navbar_opt > *{
     margin-right: 1rem;
@@ -10,4 +12,7 @@
 }
 .navbar_opt > a:active{
     color: aquamarine;
+}
+.bg_light {
+    background-color:rgb(7 39 72 / 93%);
 }
