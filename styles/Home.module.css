@@ -1,0 +1,44 @@
+
+.navbar_light .navbar_brand {
+    color: #2b9f45;
+}
+.navbar_opt > *{
+    margin-right: 1rem;
+}
+.navbar_opt > a{
+    text-decoration: none !important;
+    /* color: aliceblue; */
+}
+.navbar_opt > a:active{
+    color: aquamarine;
+}
+.bg_light {
+    background-color:rgb(7 39 72 / 93%);
+}
+.Home {
+    width: auto;
+    /* height: 500px; */
+    height: 100%;
+   
+}
+
+.input {
+    display: flex;
+    justify-content: center;
+    color: black;
+}
+
+.head {
+  font-size: 32px;
+}
+.footer{
+    height: 30%;
+    background-color: #040404e3;
+}
+.body_bg{
+    height: 100vh;
+    background-image: url('../public/Meteor.svg');
+    background-size: cover;
+    display: flex;
+    flex-direction: column;
+}
