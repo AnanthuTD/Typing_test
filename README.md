@@ -1,1 +1,1 @@
-This is a typing test for evaluating typing speed. You can also compete with your friends and also view the score board.
+This is a typing test for evaluating typing speed. You can also compete with your friends and view the score board.
