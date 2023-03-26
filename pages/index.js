@@ -13,7 +13,7 @@ function Home() {
                 <script
                     src="https://code.jquery.com/jquery-3.6.3.js"
                     integrity="sha256-nQLuAZGRRcILA+6dMBOvcRh5Pe310sBpanc6+QBmyVM="
-                    crossorigin="anonymous"
+                    crossOrigin="anonymous"
                 ></script>
                 {/* <!-- Font Awesome --> */}
                 <link
@@ -30,6 +30,7 @@ function Home() {
                     href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
                     rel="stylesheet"
                 />
+              
             </Head>
 
             <div
@@ -129,28 +130,11 @@ function Home() {
                     style={{ backgroundColor: "rgba(0, 0, 0, 0.2)" }}
                 >
                     © 2020 Copyright:
-                    <a className="text-white" href="https://mdbootstrap.com/">
+                    <a className="text-white" href="#">
                         TypingTest.com
                     </a>
                 </div>
             </footer>
-
-            {/* Google Fonts  */}
-            <link
-                href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-                rel="stylesheet"
-            />
-            {/* MDB */}
-            <link
-                href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.2.0/mdb.min.css"
-                rel="stylesheet"
-            />
-
-            <Script
-                src="https://accounts.google.com/gsi/client"
-                async
-                defer
-            ></Script>
         </>
     );
 }

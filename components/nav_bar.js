@@ -1,6 +1,7 @@
 import React from "react";
 import styles from "./nav_bar.module.css";
 import { useRouter } from "next/router";
+import Link from "next/link";
 
 function nav_bar() {
     // to change color of link in nav according to page in which it is in.
@@ -15,6 +16,9 @@ function nav_bar() {
     const a_about = {
         color: router.pathname === "/about" ? "red" : "aliceblue",
     };
+    const a_game = {
+        color: router.pathname === "/game" ? "red" : "aliceblue",
+    };
     return (
         <nav
             className={`navbar ${styles.navbar_light} ${styles.bg_light} d-flex justify-content-start`}
@@ -24,27 +28,33 @@ function nav_bar() {
             </span>
 
             <div className={`${styles.navbar_opt}`}>
-                <a
-                    className={`${styles.nav_item} ${styles.nav_link}`}
-                    href="/"
+                <Link
                     style={a_home}
+                    href={"/"}
                 >
-                    Home{" "}
-                </a>
-                <a
-                    className={`${styles.nav_item} ${styles.nav_link}`}
-                    href="#"
+                    Home
+                </Link>
+                <Link
+                   
                     style={a_high_score}
+                    href={"/high-score"}
                 >
                     High Score
-                </a>
-                <a
-                    className={`${styles.nav_item} ${styles.nav_link}`}
-                    href="#"
+                </Link>
+                <Link
+                
                     style={a_about}
+                    href={"/about"}
                 >
                     About
-                </a>
+                </Link>
+                <Link
+                    
+                    style={a_game}
+                    href={"/game"}
+                >
+                    Game
+                </Link>
             </div>
         </nav>
     );

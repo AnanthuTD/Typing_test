@@ -1,4 +1,6 @@
+import Script from "next/script";
 import React from "react";
+
 
 function google_singin() {
     function handleCredentialResponse(response) {
@@ -18,11 +20,10 @@ function google_singin() {
 
     return (
         <>
-            <script
+            <Script
                 src="https://accounts.google.com/gsi/client"
-                async
-                defer
-            ></script>
+                strategy="beforeInteractive" 
+            ></Script>
             <div id="buttonDiv"></div>
         </>
     );
