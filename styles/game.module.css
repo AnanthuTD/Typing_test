@@ -8,13 +8,14 @@
     margin-inline: 4rem;
 }
 .text{
-    color: rgb(0, 0, 0);
+    color: white;
     font-size: x-large;
     margin: auto;
 }
 .outer_game{
-    background-color: #ffffff;
+    background-color: #000000;
     border-radius: 5px;
     padding: 20px;
     display: flex;
+    color: white;
 }

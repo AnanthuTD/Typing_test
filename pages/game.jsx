@@ -37,7 +37,7 @@ function game() {
             if (e.key == "Backspace") {
                 count = count > 0 ? count - 1 : 0;
                 let p_tag = document.getElementById(`passage_${count}`);
-                p_tag.style.backgroundColor = "transparent";
+                p_tag.style.color = "white";
                 return;
             }
             /*  let char_code = e.key.charCodeAt(0)
@@ -73,11 +73,14 @@ function game() {
 
             if (passage[count] != char) {
                 let p_tag = document.getElementById(`passage_${count}`);
-                p_tag.style.backgroundColor = "#f66";
+                if (passage[count] == " ") {
+                    p_tag.style.backgroundColor = "#f66";
+                } else {
+                    p_tag.style.color = "#f66";
+                }
             } else {
                 let p_tag = document.getElementById(`passage_${count}`);
-                p_tag.style.backgroundColor = "rgb(163, 238, 175)";
-
+                p_tag.style.color = "rgb(163, 238, 175)";
                 correctLetterCount++;
             }
             count++;
