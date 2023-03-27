@@ -14,22 +14,28 @@ function game() {
         let time = 0;
         var index = Math.floor(Math.random() * Text.length);
         setPassage(Text[index]);
-        let str = [];
+        let str = [],
+            word = 0;
+        let temp = [];
         for (let index = 0; index < passage.length; index++) {
             let element = passage[index];
-            if (element == " ")
-                str[index] = (
-                    <p key={`passage_${index}`} id={`passage_${index}`}>
-                        &nbsp;
-                    </p>
-                );
-            else
-                str[index] = (
+            if (element !== " ") {
+                temp[index] = (
                     <p key={`passage_${index}`} id={`passage_${index}`}>
                         {element}
                     </p>
                 );
+            } else {
+                str[word++] = <div key={`word_${word}`} className="d-flex">{temp}</div>;
+                str[word++] = (
+                    <p key={`passage_${index}`} id={`passage_${index}`}>
+                        &nbsp;
+                    </p>
+                );
+                temp = [];
+            }
         }
+        str[word] = <div key={`word_${word}`} className="d-flex">{temp}</div>;
         setConverted(str);
         let firstKeyDown = true;
         let count = 0;
@@ -97,11 +103,17 @@ function game() {
     return (
         <>
             <section className={styles.body}>
-                <section className={styles.main}>
-                    <div className={styles.outer_game}>{converted}</div>
+                <section className={`${styles.main} row`}>
+                    <div
+                        className={[
+                            styles.outer_game,
+                            "col-8",
+                            "text-wrap",
+                        ].join(" ")}
+                    >
+                        {converted}
+                    </div>
                 </section>
-                <h1 style={{ color: "red" }}>{totalTime}</h1>
-                <h1 style={{ color: "yellow" }}>{wpm}</h1>
             </section>
         </>
     );
