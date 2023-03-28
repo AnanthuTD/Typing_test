@@ -1,22 +1,46 @@
-.body{
+.body {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
-.main{
+.main {
     margin-inline: 4rem;
+    display: flex;
+    justify-content: space-around;
+    background-color: grey;
+    padding: 10px;
+    border-radius: 5px;
+
+    -webkit-transition: background-color 3s ease-out;
+    -moz-transition: background-color 3s ease-out;
+    -o-transition: background-color 3s ease-out;
+    transition: background-color 3s ease-out;
 }
-.text{
+.main > * {
+    margin: 3px;
+}
+.text {
     color: white;
     font-size: x-large;
     margin: auto;
 }
-.outer_game{
+.passage {
     background-color: #000000;
     border-radius: 5px;
     padding: 20px;
     display: flex;
     flex-wrap: wrap;
     color: white;
+    font-size: x-large;
+}
+.wpm {
+    min-width: 200px;
+    /* background-color: aquamarine; */
+    border-radius: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: aliceblue;
+    font-size: x-large;
 }
