@@ -125,27 +125,26 @@ function game() {
                            in a minute including spaces, your typing speed would be 20 WPM.
                            https://www.ratatype.com/typing-test/#:~:text=The%20most%20common,be%2020%20WPM.
                         */
-                       
+
                         //    5 letters == a word
 
                         let secPerWord = 5 / letterPerSec;
                         let wordPerMin = parseInt(60 / secPerWord);
-                        if (wordPerMin > 7) {
-                            let bgTransition = document.getElementById("main_game")
-                            bgTransition.style.backgroundColor = "yellow"
+                        
+                        // dinamic color change based on wpm
+                        
+                        if (wordPerMin > 120) {
+                            let bgTransition =
+                                document.getElementById("main_game");
+                            bgTransition.style.backgroundColor = `hsl(0, 100%, 40%)`;
+                        } else {
+                            let bgTransition =
+                                document.getElementById("main_game");
+                            bgTransition.style.backgroundColor = `hsl(${
+                                120 - wordPerMin
+                            }, 100%, 40%)`;
                         }
-                        if (wordPerMin > 13) {
-                            let bgTransition = document.getElementById("main_game")
-                            bgTransition.style.backgroundColor = "green"
-                        }
-                        if (wordPerMin > 22) {
-                            let bgTransition = document.getElementById("main_game")
-                            bgTransition.style.backgroundColor = "orange"
-                        }
-                        if (wordPerMin > 30) {
-                            let bgTransition = document.getElementById("main_game")
-                            bgTransition.style.backgroundColor = "red"
-                        }
+
                         setWpm(wordPerMin);
                     },
                     1000 // 1000 ms == 1 s.
@@ -178,8 +177,6 @@ function game() {
         // calling keyDownHandler (named function) on keydown
 
         document.addEventListener("keydown", keyDownHandler);
-            
-            
 
         return () => {
             document.removeEventListener("keydown", keyDownHandler);
@@ -191,22 +188,10 @@ function game() {
         <>
             <section className={styles.body}>
                 <section className={`${styles.main}`} id="main_game">
-                    <div
-                        className={[
-                            styles.passage,
-                            
-                            "text-wrap",
-                        ].join(" ")}
-                    >
+                    <div className={[styles.passage, "text-wrap"].join(" ")}>
                         {converted}
                     </div>
-                    <div
-                        className={[
-                            styles.wpm,
-                           
-                            "text-wrap",
-                        ].join(" ")}
-                    >
+                    <div className={[styles.wpm, "text-wrap"].join(" ")}>
                         <span>{wpm} wpm</span>
                     </div>
                 </section>
