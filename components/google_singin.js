@@ -5,10 +5,10 @@ import React from "react";
 function google_singin() {
     function handleCredentialResponse(response) {
         console.log("Encoded JWT ID token: " + response.credential);
-    }
+        }
     React.useEffect(() => {
         google.accounts.id.initialize({
-            client_id: "YOUR_GOOGLE_CLIENT_ID",
+            client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
             callback: handleCredentialResponse,
         });
         google.accounts.id.renderButton(
@@ -22,9 +22,10 @@ function google_singin() {
         <>
             <Script
                 src="https://accounts.google.com/gsi/client"
-                strategy="beforeInteractive" 
+                strategy="beforeInteractive"
             ></Script>
             <div id="buttonDiv"></div>
+            <div>{userData}</div>
         </>
     );
 }

@@ -1,10 +1,7 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-
 import React from "react";
-import Script from "next/script";
 import GoogleSignup from "../components/google_singin";
-import Layout from "../components/layout";
 
 function Home() {
     return (
