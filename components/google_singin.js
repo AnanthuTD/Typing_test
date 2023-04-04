@@ -1,11 +1,16 @@
 import Script from "next/script";
 import React from "react";
 
-
-function google_singin() {
-    function handleCredentialResponse(response) {
-        console.log("Encoded JWT ID token: " + response.credential);
-        }
+function google_singin({returnUserData}) {
+    async function handleCredentialResponse(response) {
+        await fetch("api/users/signup/google", { method: "POST", body:response.credential }).then((response)=>{
+            return response.json()
+        }).then((data)=>{
+            if (data.status == 'success') {
+                returnUserData(data.profile)
+            } 
+        })
+    }
     React.useEffect(() => {
         google.accounts.id.initialize({
             client_id: process.env.NEXT_PUBLIC_GOOGLE_CLIENT_ID,
@@ -25,7 +30,6 @@ function google_singin() {
                 strategy="beforeInteractive"
             ></Script>
             <div id="buttonDiv"></div>
-            <div>{userData}</div>
         </>
     );
 }

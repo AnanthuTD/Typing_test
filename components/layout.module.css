@@ -1,6 +1,6 @@
 .body_bg{
     height: 100vh;
-    background-image: url('../public/Meteor.svg');
+    background-image: url('/images/Meteor.svg');
     background-size: cover;
     display: flex;
     flex-direction: column;

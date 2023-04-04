@@ -1,8 +1,11 @@
 import Head from "next/head";
 import Layout from "../components/layout";
 import Script from "next/script";
+import { useState } from "react";
+
 
 export default function MyApp({ Component, pageProps }) {
+    const [user, setUser] = useState(undefined)
     return (
         <>
             <Head>
@@ -27,8 +30,8 @@ export default function MyApp({ Component, pageProps }) {
                 ></Script>
             </Head>
 
-            <Layout>
-                <Component />
+            <Layout user={user}>
+                <Component returnUser = {setUser} user={user}/>
             </Layout>
         </>
     );

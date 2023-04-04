@@ -1,9 +1,15 @@
 import Head from "next/head";
 import styles from "../styles/Home.module.css";
-import React from "react";
-import GoogleSignup from "../components/google_singin";
+import {useEffect, useState} from "react";
+import Signup from "../components/signup";
+import Levels from "../components/levels";
 
-function Home() {
+function Home({returnUser}) {
+    const [user, setUser] = useState(undefined)
+    useEffect(() => {
+     returnUser(user)
+    }, [user])
+    
     return (
         <>
             <Head>
@@ -31,36 +37,14 @@ function Home() {
             </Head>
 
             <div
-                className={`${styles.Home} container-fluid d-flex justify-content-center align-items-center`}
+                className={`${styles.Home} d-flex justify-content-center align-items-center`}
                 id="mainbody"
             >
-                <div>
-                    <form>
-                        <div className="d-flex mb-3">
-                            <input
-                                type="email"
-                                className="form-control"
-                                id="email"
-                                placeholder="email"
-                            />
-                            <button
-                                type="submit"
-                                className="btn btn-outline-success"
-                            >
-                                Submit
-                            </button>
-                        </div>
-                        <div
-                            style={{
-                                borderTop: "solid black 0.8px",
-                                paddingTop: "20px",
-                            }}
-                        >
-                            <GoogleSignup />
-                        </div>
-                    </form>
-                </div>
+               {user? <Levels />:<Signup returnUserData={setUser} />}
             </div>
+
+                            {/* footer */}
+
             <footer
                 className={`mt-auto mb-0 ${styles.footer} text-center text-white`}
             >

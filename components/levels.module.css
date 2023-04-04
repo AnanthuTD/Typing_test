@@ -1,0 +1,13 @@
+.outer_level{
+    width:90%;
+    display: flex;
+    margin-inline: 20px;
+}
+.inner_level > *{
+    /* margin: 10px; */
+    /* width:350px */
+
+}
+.inner_level{
+    width: 100%;
+}
