@@ -1,8 +1,12 @@
-import React from "react";
-import Text from "../public/text";
 import styles from "../styles/game.module.css";
 import { useState, useEffect } from "react";
+import * as File from '../public/text'
+import Cookies from 'js-cookie'
+
 function game() {
+
+    const level = Cookies.get("level")
+   
     // to store current passage.
 
     const [passage, setPassage] = useState("");
@@ -10,6 +14,7 @@ function game() {
     // to store a modified version of passage which is converted into jsx.
 
     const [converted, setConverted] = useState([]);
+
     /* if passage = "abc g"
             converted[0] = <div>
                             <p>a</p>
@@ -19,14 +24,16 @@ function game() {
             converted[1] = <p>&nbsp;</p>
             converted[2] = <div><p>g</p></div>
     */
+
     const [totalTime, setTotalTime] = useState(0);
     const [wpm, setWpm] = useState(0);
 
     useEffect(() => {
+        // selecting an array of passages according to the level(stored using cookies)
+        let Text = File[level];
+
         let correctLetterCount = 0,
             time = 0;
-
-        // selecting random passage
 
         let index = Math.floor(Math.random() * Text.length);
         setPassage(Text[index]);
@@ -130,9 +137,9 @@ function game() {
 
                         let secPerWord = 5 / letterPerSec;
                         let wordPerMin = parseInt(60 / secPerWord);
-                        
+
                         // dinamic color change based on wpm
-                        
+
                         if (wordPerMin > 120) {
                             let bgTransition =
                                 document.getElementById("main_game");

@@ -2,10 +2,9 @@
     color: #2b9f45;
     font-size: xx-large;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    cursor: pointer;
 }
-.navbar_opt{
 
-}
 .navbar_opt > *{
     margin-right: 1rem;
 }

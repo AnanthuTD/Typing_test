@@ -3,10 +3,12 @@
     display: flex;
     margin-inline: 20px;
 }
-.inner_level > *{
-    /* margin: 10px; */
-    /* width:350px */
-
+.inner_level_title{
+    display: flex;
+    justify-content: center;
+}
+.inner_level_box:hover{
+    cursor: pointer;
 }
 .inner_level{
     width: 100%;

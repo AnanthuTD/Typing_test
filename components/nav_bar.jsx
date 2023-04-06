@@ -25,14 +25,16 @@ function nav_bar({ user }) {
         <nav
             className={`navbar ${styles.navbar_light} ${styles.bg_light} justify-content-between`}
         >
+            
             {/* left aligned */}
 
             <div className="d-flex align-items-center">
-                <span
+                <Link
+                    href={"/"}
                     className={`${styles.navbar_brand} h1 ${styles.head} mx-3`}
                 >
                     Speed Typer
-                </span>
+                </Link>
 
                 <div className={`${styles.navbar_opt}`}>
                     <Link style={a_home} href={"/"}>
