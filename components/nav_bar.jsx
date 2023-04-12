@@ -1,4 +1,4 @@
-import React from "react";
+
 import styles from "./nav_bar.module.css";
 import { useRouter } from "next/router";
 import Link from "next/link";
